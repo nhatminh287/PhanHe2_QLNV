@@ -62,6 +62,12 @@ namespace PhanHe2_QLNV
                         nv.ShowDialog();
                         Show();
                         break;
+                    case "R_TRUONGPHONG":
+                        TP_Main tp = new TP_Main();
+                        Hide();
+                        tp.ShowDialog();
+                        Show();
+                        break;
                 }
             }
             catch (Exception ex)

@@ -1,4 +1,4 @@
---Drop foreign key n?u có
+--Drop foreign key n?u cï¿½
 BEGIN
   EXECUTE IMMEDIATE 'ALTER TABLE NHANVIEN'
             || ' DROP CONSTRAINT fk_NHANVIEN_QUANLI' || ' DROP CONSTRAINT fk_NHANVIEN_QUANLI';
@@ -64,7 +64,7 @@ EXCEPTION
     END IF;
 END;
 /
---Drop table n?u có
+--Drop table n?u cï¿½
 DROP TABLE NHANVIEN CASCADE CONSTRAINTS;
 DROP TABLE PHONGBAN CASCADE CONSTRAINTS;
 DROP TABLE DEAN CASCADE CONSTRAINTS;
@@ -148,37 +148,37 @@ REFERENCES NHANVIEN(MANV);
 --Insert d? li?u m?u
 INSERT ALL
 into PHONGBAN
-values('Tài chính', 1, null)
+values('Tï¿½i chï¿½nh', 1, null)
 into PHONGBAN
 values('K? ho?ch', 2, null)
 into PHONGBAN
-values('Nhân s?', 3, null)
+values('Nhï¿½n s?', 3, null)
 SELECT * FROM dual;
 /
 ----
 INSERT ALL
 INTO NHANVIEN (MANV, TENNV, PHAI, NGAYSINH, DIACHI, SODT, LUONG, PHUCAP, VAITRO, MANQL, PHG)
-VALUES ('TP01', 'Nguyen Van A', 'Nam', TO_DATE('01-01-1990', 'DD-MM-YYYY'), 'So 1, Nguyen Hue, Ha Noi', 1111111111, 10000.00, 3000.00, 'Tr??ng phòng', null, 1)
+VALUES ('TP01', 'Nguyen Van A', 'Nam', TO_DATE('01-01-1990', 'DD-MM-YYYY'), 'So 1, Nguyen Hue, Ha Noi', 1111111111, 10000.00, 3000.00, 'Tr??ng phï¿½ng', null, 1)
 INTO NHANVIEN (MANV, TENNV, PHAI, NGAYSINH, DIACHI, SODT, LUONG, PHUCAP, VAITRO, MANQL, PHG)
-VALUES ('TP02', 'Tran Thi B', 'Nu', TO_DATE('02-02-1995', 'DD-MM-YYYY'), 'So 2, Le Loi, Ho Chi Minh', 2222222222, 9000.00, 2500.00, 'Tr??ng phòng', null, 2)
+VALUES ('TP02', 'Tran Thi B', 'Nu', TO_DATE('02-02-1995', 'DD-MM-YYYY'), 'So 2, Le Loi, Ho Chi Minh', 2222222222, 9000.00, 2500.00, 'Tr??ng phï¿½ng', null, 2)
 INTO NHANVIEN (MANV, TENNV, PHAI, NGAYSINH, DIACHI, SODT, LUONG, PHUCAP, VAITRO, MANQL, PHG)
-VALUES ('GD02', 'Le Van C', 'Nam', TO_DATE('03-03-1988', 'DD-MM-YYYY'), 'So 3, Nguyen Trai, Da Nang', 3333333333, 11000.00, 4000.00, 'Giám ??c', null, 2)
+VALUES ('GD02', 'Le Van C', 'Nam', TO_DATE('03-03-1988', 'DD-MM-YYYY'), 'So 3, Nguyen Trai, Da Nang', 3333333333, 11000.00, 4000.00, 'Giï¿½m ??c', null, 2)
 INTO NHANVIEN (MANV, TENNV, PHAI, NGAYSINH, DIACHI, SODT, LUONG, PHUCAP, VAITRO, MANQL, PHG)
 VALUES ('QL01', 'Ho Thi D', 'Nu', TO_DATE('04-04-1993', 'DD-MM-YYYY'), 'So 4, Tran Hung Dao, Ha Noi', 4444444444, 12000.00, 4500.00, 'QL tr?c ti?p', null, 3)
 INTO NHANVIEN (MANV, TENNV, PHAI, NGAYSINH, DIACHI, SODT, LUONG, PHUCAP, VAITRO, MANQL, PHG)
-VALUES ('NS01', 'Nguyen Van E', 'Nam', TO_DATE('05-05-1998', 'DD-MM-YYYY'), 'So 5, Le Duan, Ho Chi Minh', 5555555555, 13000.00, 5000.00, 'Nhân s?', null, 3)
+VALUES ('NS01', 'Nguyen Van E', 'Nam', TO_DATE('05-05-1998', 'DD-MM-YYYY'), 'So 5, Le Duan, Ho Chi Minh', 5555555555, 13000.00, 5000.00, 'Nhï¿½n s?', null, 3)
 INTO NHANVIEN (MANV, TENNV, PHAI, NGAYSINH, DIACHI, SODT, LUONG, PHUCAP, VAITRO, MANQL, PHG)
-VALUES ('TC01', 'Tran Thi F', 'Nu', TO_DATE('06-06-1985', 'DD-MM-YYYY'), 'So 6, Nguyen Van Linh, Da Nang', 6666666666, 14000.00, 5500.00, 'Tài chính', null, 1)
+VALUES ('TC01', 'Tran Thi F', 'Nu', TO_DATE('06-06-1985', 'DD-MM-YYYY'), 'So 6, Nguyen Van Linh, Da Nang', 6666666666, 14000.00, 5500.00, 'Tï¿½i chï¿½nh', null, 1)
 INTO NHANVIEN (MANV, TENNV, PHAI, NGAYSINH, DIACHI, SODT, LUONG, PHUCAP, VAITRO, MANQL, PHG)
-VALUES ('TDA01', 'Le Van G', 'Nam', TO_DATE('07-07-1991', 'DD-MM-YYYY'), 'So 7, Tran Quoc Toan, Ha Noi', 7777777777, 15000.00, 6000.00, 'Tr??ng ?? án', null,1 )
+VALUES ('TDA01', 'Le Van G', 'Nam', TO_DATE('07-07-1991', 'DD-MM-YYYY'), 'So 7, Tran Quoc Toan, Ha Noi', 7777777777, 15000.00, 6000.00, 'Tr??ng ?? ï¿½n', null,1 )
 INTO NHANVIEN (MANV, TENNV, PHAI, NGAYSINH, DIACHI, SODT, LUONG, PHUCAP, VAITRO, MANQL, PHG)
-VALUES ('NV01', 'Ho Thi H', 'Nu', TO_DATE('08-08-1996', 'DD-MM-YYYY'), 'So 8, Nguyen Van Cu, Ho Chi Minh', 8888888888, 16000.00, 6500.00, 'Nhân viên','QL01', 3)
+VALUES ('NV01', 'Ho Thi H', 'Nu', TO_DATE('08-08-1996', 'DD-MM-YYYY'), 'So 8, Nguyen Van Cu, Ho Chi Minh', 8888888888, 16000.00, 6500.00, 'Nhï¿½n viï¿½n','QL01', 3)
 INTO NHANVIEN (MANV, TENNV, PHAI, NGAYSINH, DIACHI, SODT, LUONG, PHUCAP, VAITRO, MANQL, PHG)
-VALUES ('NV02', 'Nguyen Van I', 'Nam', TO_DATE('09-09-1992', 'DD-MM-YYYY'), 'So 9, Tran Duy Hung, Ha Tinh', 9999999999, 17000.00, 7000.00, 'Nhân viên', 'QL01', 3)
+VALUES ('NV02', 'Nguyen Van I', 'Nam', TO_DATE('09-09-1992', 'DD-MM-YYYY'), 'So 9, Tran Duy Hung, Ha Tinh', 9999999999, 17000.00, 7000.00, 'Nhï¿½n viï¿½n', 'QL01', 3)
 INTO NHANVIEN (MANV, TENNV, PHAI, NGAYSINH, DIACHI, SODT, LUONG, PHUCAP, VAITRO, MANQL, PHG)
-VALUES ('NV03', 'Nguyen Van K', 'Nam', TO_DATE('09-07-1997', 'DD-MM-YYYY'), 'So 9, Tran Duy Hung, Da Nang', 1010101010, 18000.00, 8000.00, 'Nhân viên',null, 2)
+VALUES ('NV03', 'Nguyen Van K', 'Nam', TO_DATE('09-07-1997', 'DD-MM-YYYY'), 'So 9, Tran Duy Hung, Da Nang', 1010101010, 18000.00, 8000.00, 'Nhï¿½n viï¿½n',null, 2)
 INTO NHANVIEN (MANV, TENNV, PHAI, NGAYSINH, DIACHI, SODT, LUONG, PHUCAP, VAITRO, MANQL, PHG)
-VALUES ('NV04', 'Nguyen Van L', 'Nam', TO_DATE('09-07-199', 'DD-MM-YYYY'), 'So 9, Tran Duy Hung, Da Nang', 1010101011, 19000.00, 8000.00, 'Nhân viên',null,1 )
+VALUES ('NV04', 'Nguyen Van L', 'Nam', TO_DATE('09-07-199', 'DD-MM-YYYY'), 'So 9, Tran Duy Hung, Da Nang', 1010101011, 19000.00, 8000.00, 'Nhï¿½n viï¿½n',null,1 )
 SELECT * FROM dual;
 /
 
@@ -221,5 +221,5 @@ SELECT *  FROM PHANCONG;
 SELECT * FROM PHONGBAN;
 /
 
-
-
+UPDATE QLNV.PHONGBAN SET TRPHG = 'TP01' WHERE MAPB = 'PB01';
+UPDATE QLNV.PHONGBAN SET TRPHG = 'TP01' WHERE MAPB = 'PB02';

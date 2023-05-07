@@ -83,6 +83,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PhanCong.cs" />
+    <Compile Include="PhanCong_TruongPhong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PhanCong_TruongPhong.Designer.cs">
+      <DependentUpon>PhanCong_TruongPhong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TP_Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TP_Main.Designer.cs">
+      <DependentUpon>TP_Main.cs</DependentUpon>
+    </Compile>
     <Compile Include="NV_Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +124,18 @@
     <Compile Include="PhongBan.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TruongPhong_NhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TruongPhong_NhanVien.Designer.cs">
+      <DependentUpon>TruongPhong_NhanVien.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="PhanCong_TruongPhong.resx">
+      <DependentUpon>PhanCong_TruongPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TP_Main.resx">
+      <DependentUpon>TP_Main.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NV_Main.resx">
       <DependentUpon>NV_Main.cs</DependentUpon>
     </EmbeddedResource>
@@ -132,6 +157,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="TruongPhong_NhanVien.resx">
+      <DependentUpon>TruongPhong_NhanVien.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

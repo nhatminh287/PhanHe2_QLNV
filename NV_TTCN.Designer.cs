@@ -369,7 +369,7 @@
             this.btnSuaTTCNAcp.Visible = false;
             this.btnSuaTTCNAcp.Click += new System.EventHandler(this.btnSuaTTCNAcp_Click);
             // 
-            // BN_TTCN
+            // NV_TTCN
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -380,10 +380,10 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.btnSuaTTCN);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "BN_TTCN";
+            this.Name = "NV_TTCN";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Xem thông tin cá nhân";
-            this.Load += new System.EventHandler(this.BN_TTCN_Load);
+            this.Load += new System.EventHandler(this.NV_TTCN_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);

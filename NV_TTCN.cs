@@ -126,7 +126,7 @@ namespace PhanHe2_QLNV
         }
     
 
-        private void BN_TTCN_Load(object sender, EventArgs e)
+        private void NV_TTCN_Load(object sender, EventArgs e)
         {
             try
             {
@@ -186,6 +186,7 @@ namespace PhanHe2_QLNV
         {
 
         }
+
     }
     
 }
