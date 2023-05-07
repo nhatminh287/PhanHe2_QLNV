@@ -41,11 +41,11 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label1.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label1.Location = new System.Drawing.Point(49, 37);
+            this.label1.Location = new System.Drawing.Point(62, 38);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(589, 32);
+            this.label1.Size = new System.Drawing.Size(590, 32);
             this.label1.TabIndex = 0;
-            this.label1.Text = "HỆ THỐNG QUẢN LÝ THÔNG TIN BỆNH VIỆN";
+            this.label1.Text = "HỆ THỐNG QUẢN LÝ THÔNG TIN NHÂN VIÊN";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txbPw
@@ -53,7 +53,7 @@
             this.txbPw.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txbPw.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txbPw.Location = new System.Drawing.Point(330, 154);
-            this.txbPw.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txbPw.Margin = new System.Windows.Forms.Padding(4);
             this.txbPw.Name = "txbPw";
             this.txbPw.Size = new System.Drawing.Size(206, 22);
             this.txbPw.TabIndex = 13;
@@ -65,7 +65,7 @@
             this.Button_Login.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.Button_Login.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.Button_Login.Location = new System.Drawing.Point(288, 206);
-            this.Button_Login.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Button_Login.Margin = new System.Windows.Forms.Padding(4);
             this.Button_Login.Name = "Button_Login";
             this.Button_Login.Size = new System.Drawing.Size(148, 39);
             this.Button_Login.TabIndex = 14;
@@ -100,7 +100,7 @@
             this.txbUsername.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txbUsername.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txbUsername.Location = new System.Drawing.Point(330, 104);
-            this.txbUsername.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txbUsername.Margin = new System.Windows.Forms.Padding(4);
             this.txbUsername.Name = "txbUsername";
             this.txbUsername.Size = new System.Drawing.Size(206, 22);
             this.txbUsername.TabIndex = 12;

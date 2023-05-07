@@ -20,7 +20,7 @@ namespace PhanHe2_QLNV
         public TruongPhong_NhanVien()
         {
             InitializeComponent();
-            adapter = new OracleDataAdapter("SELECT MANV, TENNV, PHAI,NGAYSINH,DIACHI, SODT, VAITRO, MANQL, PHG FROM QLNV.NHANVIEN", con);
+            adapter = new OracleDataAdapter("SELECT MANV, TENNV, PHAI,NGAYSINH,DIACHI, SODT, VAITRO, MANQL, PHG FROM QLNV.NHANVIEN NV, QLNV.PHONGBAN PB where NV.PHG = PB.MAPB AND PB.TRPHG = (SELECT USER FROM DUAL)", con);
             dataTable = new DataTable();
             adapter.Fill(dataTable);
             dataGridView1.DataSource = dataTable;

@@ -41,6 +41,7 @@ namespace PhanHe2_QLNV
             }
             catch (Exception ex)
             {
+                con.Close();
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
