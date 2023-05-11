@@ -34,7 +34,7 @@ namespace PhanHe2_QLNV
                 return;
             }
 
-            string conString = "USER ID=" + txbUsername.Text + ";PASSWORD=" + txbPw.Text + ";DATA SOURCE=localhost:1521/orcl";
+            string conString = "USER ID=" + txbUsername.Text + ";PASSWORD=" + txbPw.Text + ";DATA SOURCE=DESKTOP-6ELD45C";
 
             try
             {
@@ -68,6 +68,12 @@ namespace PhanHe2_QLNV
                         tp.ShowDialog();
                         Show();
                         break;
+                    case "R_QLTT":
+                        QLTT_Main ql = new QLTT_Main();
+                        Hide();
+                        ql.ShowDialog();
+                        Show();
+                        break;
                 }
             }
             catch (Exception ex)
@@ -83,6 +89,11 @@ namespace PhanHe2_QLNV
         }
 
         private void DangNhap_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txbUsername_TextChanged(object sender, EventArgs e)
         {
 
         }

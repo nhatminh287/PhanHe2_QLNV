@@ -90,6 +90,24 @@
     <Compile Include="PhanCong_TruongPhong.Designer.cs">
       <DependentUpon>PhanCong_TruongPhong.cs</DependentUpon>
     </Compile>
+    <Compile Include="QLTT_Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QLTT_Main.Designer.cs">
+      <DependentUpon>QLTT_Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QLTT_PC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QLTT_PC.Designer.cs">
+      <DependentUpon>QLTT_PC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QLTT_TTNV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QLTT_TTNV.Designer.cs">
+      <DependentUpon>QLTT_TTNV.cs</DependentUpon>
+    </Compile>
     <Compile Include="TP_Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,6 +150,15 @@
     </Compile>
     <EmbeddedResource Include="PhanCong_TruongPhong.resx">
       <DependentUpon>PhanCong_TruongPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QLTT_Main.resx">
+      <DependentUpon>QLTT_Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QLTT_PC.resx">
+      <DependentUpon>QLTT_PC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QLTT_TTNV.resx">
+      <DependentUpon>QLTT_TTNV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TP_Main.resx">
       <DependentUpon>TP_Main.cs</DependentUpon>

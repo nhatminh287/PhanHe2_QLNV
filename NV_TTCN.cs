@@ -97,7 +97,7 @@ namespace PhanHe2_QLNV
                 con.Open();
                 //int tgian = int.Parse(txtTgTGDA.Text);
 
-                string strSQL = "UPDATE QLNV.NHANVIEN SET TENNV = N'" + txtTenNV.Text.ToString() +
+                string strSQL = "UPDATE TUAN.NHANVIEN SET TENNV = N'" + txtTenNV.Text.ToString() +
                     "', NGAYSINH = TO_DATE('" + dtpNgaySinh.Value.ToString("yyyy-MM-dd") + "','yyyy-mm-dd')" +
                     
                     ", SODT = '" + txtSDT.Text.ToString() +
@@ -132,7 +132,7 @@ namespace PhanHe2_QLNV
             {
                 con.Open();
                 string userName = System.Security.Principal.WindowsIdentity.GetCurrent().Name;
-                string strSQL = "SELECT * FROM QLNV.NHANVIEN nv, QLNV.PHANCONG pc WHERE nv.MANV = (SELECT user FROM dual) and nv.MANV = pc.MANV ";
+                string strSQL = "SELECT * FROM TUAN.NHANVIEN nv, TUAN.PHANCONG pc WHERE nv.MANV = (SELECT user FROM dual) and nv.MANV = pc.MANV ";
                 OracleCommand oCmd = new OracleCommand(strSQL, con);
                 var reader = oCmd.ExecuteReader();
                 //Console.WriteLine(reader);
@@ -187,6 +187,10 @@ namespace PhanHe2_QLNV
 
         }
 
+        private void txbMaNV_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
     
 }
