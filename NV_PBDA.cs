@@ -46,7 +46,7 @@ namespace PhanHe2_QLNV
                 List<DeAn> da = null;
                 con.Open();
                 // Lay du lieu phongban
-                string strSQL = "SELECT * FROM QLNV.PHONGBAN";
+                string strSQL = "SELECT * FROM TUAN.PHONGBAN";
                 OracleCommand oCmd = new OracleCommand(strSQL, con);
                 var reader = oCmd.ExecuteReader();
                 pb = GetList<PhongBan>(reader);
@@ -54,7 +54,7 @@ namespace PhanHe2_QLNV
                 dataGridView1.DataSource = pb;
 
                 // Lay du lieu dean
-                strSQL = "SELECT * FROM QLNV.DEAN";
+                strSQL = "SELECT * FROM TUAN.DEAN";
                 OracleCommand oCmd2 = new OracleCommand(strSQL, con);
                 var reader2 = oCmd2.ExecuteReader();
                 da = GetList<DeAn>(reader2);
@@ -67,6 +67,11 @@ namespace PhanHe2_QLNV
                 MessageBox.Show("Không thể tìm thấy thông tin cá nhân do lỗi bên hệ thống", "Lỗi",
                         MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

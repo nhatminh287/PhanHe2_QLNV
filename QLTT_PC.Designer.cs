@@ -1,7 +1,6 @@
-﻿
-namespace PhanHe2_QLNV
+﻿namespace PhanHe2_QLNV
 {
-    partial class TruongPhong_NhanVien
+    partial class QLTT_PC
     {
         /// <summary>
         /// Required designer variable.
@@ -36,22 +35,22 @@ namespace PhanHe2_QLNV
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(24, 61);
+            this.dataGridView1.Location = new System.Drawing.Point(109, 40);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1314, 350);
+            this.dataGridView1.Size = new System.Drawing.Size(558, 307);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // TruongPhong_NhanVien
+            // QLTT_PC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1365, 450);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.dataGridView1);
-            this.Name = "TruongPhong_NhanVien";
-            this.Text = "TruongPhong_NhanVien";
+            this.Name = "QLTT_PC";
+            this.Text = "QLTT_PC";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 

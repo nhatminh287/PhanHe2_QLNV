@@ -12,18 +12,23 @@ using System.Windows.Forms;
 
 namespace PhanHe2_QLNV
 {
-    public partial class TruongPhong_NhanVien : Form
+    public partial class QLTT_TTNV : Form
     {
         private OracleDataAdapter adapter;
         private DataTable dataTable;
         OracleConnection con = new OracleConnection(ConfigurationManager.ConnectionStrings["con"].ConnectionString);
-        public TruongPhong_NhanVien()
+        public QLTT_TTNV()
         {
             InitializeComponent();
-            adapter = new OracleDataAdapter("SELECT MANV, TENNV, PHAI,NGAYSINH,DIACHI, SODT, VAITRO, MANQL, PHG FROM QLNV.NHANVIEN NV, QLNV.PHONGBAN PB where NV.PHG = PB.MAPB AND PB.TRPHG = (SELECT USER FROM DUAL)", con);
+            adapter = new OracleDataAdapter("SELECT MANV, TENNV, PHAI,NGAYSINH,DIACHI, SODT, VAITRO, MANQL, PHG FROM TUAN.NHANVIEN where NHANVIEN.MANQL=(SELECT USER FROM DUAL)", con);
             dataTable = new DataTable();
             adapter.Fill(dataTable);
             dataGridView1.DataSource = dataTable;
+        }
+
+        private void QLTT_TTNV_Load(object sender, EventArgs e)
+        {
+
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
