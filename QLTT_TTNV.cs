@@ -20,7 +20,7 @@ namespace PhanHe2_QLNV
         public QLTT_TTNV()
         {
             InitializeComponent();
-            adapter = new OracleDataAdapter("SELECT MANV, TENNV, PHAI,NGAYSINH,DIACHI, SODT, VAITRO, MANQL, PHG FROM TUAN.NHANVIEN where NHANVIEN.MANQL=(SELECT USER FROM DUAL)", con);
+            adapter = new OracleDataAdapter("SELECT MANV, TENNV, PHAI,NGAYSINH,DIACHI, SODT, VAITRO, MANQL, PHG FROM QLNV.NHANVIEN where NHANVIEN.MANQL=(SELECT USER FROM DUAL)", con);
             dataTable = new DataTable();
             adapter.Fill(dataTable);
             dataGridView1.DataSource = dataTable;
