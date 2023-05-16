@@ -132,7 +132,7 @@ namespace PhanHe2_QLNV
             {
                 con.Open();
                 string userName = System.Security.Principal.WindowsIdentity.GetCurrent().Name;
-                string strSQL = "SELECT * FROM TUAN.NHANVIEN nv, TUAN.PHANCONG pc WHERE nv.MANV = (SELECT user FROM dual) and nv.MANV = pc.MANV ";
+                string strSQL = "SELECT * FROM QLNV.NHANVIEN nv, QLNV.PHANCONG pc WHERE nv.MANV = (SELECT user FROM dual) and nv.MANV = pc.MANV ";
                 OracleCommand oCmd = new OracleCommand(strSQL, con);
                 var reader = oCmd.ExecuteReader();
                 //Console.WriteLine(reader);
