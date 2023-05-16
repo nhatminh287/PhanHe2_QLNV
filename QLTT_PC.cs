@@ -20,7 +20,7 @@ namespace PhanHe2_QLNV
         public QLTT_PC()
         {
             InitializeComponent();
-            adapter = new OracleDataAdapter("SELECT n.MANV, n.TENNV, d.MADA, d.TENDA, d.PHONG, d.NGAYBD, p.THOIGIAN FROM TUAN.DEAN d INNER JOIN TUAN.PHANCONG p ON d.MADA = p.MADA INNER JOIN TUAN.NHANVIEN n ON p.MANV = n.MANV WHERE n.MANQL = (SELECT USER FROM DUAL) or n.MANV= (SELECT USER FROM DUAL)", con);
+            adapter = new OracleDataAdapter("SELECT n.MANV, n.TENNV, d.MADA, d.TENDA, d.PHONG, d.NGAYBD, p.THOIGIAN FROM QLNV.DEAN d INNER JOIN QLNV.PHANCONG p ON d.MADA = p.MADA INNER JOIN QLNV.NHANVIEN n ON p.MANV = n.MANV WHERE n.MANQL = (SELECT USER FROM DUAL) or n.MANV= (SELECT USER FROM DUAL)", con);
             dataTable = new DataTable();
             adapter.Fill(dataTable);
             dataGridView1.DataSource = dataTable;
