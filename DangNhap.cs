@@ -34,7 +34,7 @@ namespace PhanHe2_QLNV
                 return;
             }
 
-            string conString = "USER ID=" + txbUsername.Text + ";PASSWORD=" + txbPw.Text + ";DATA SOURCE=DESKTOP-6ELD45C";
+            string conString = "USER ID=" + txbUsername.Text + ";PASSWORD=" + txbPw.Text + ";DATA SOURCE=localhost:1521/orcl";
 
             try
             {
