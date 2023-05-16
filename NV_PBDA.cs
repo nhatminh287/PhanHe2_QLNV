@@ -73,5 +73,10 @@ namespace PhanHe2_QLNV
         {
 
         }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

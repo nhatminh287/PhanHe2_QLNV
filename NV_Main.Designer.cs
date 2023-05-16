@@ -45,7 +45,7 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "QUẢN LÝ THÔNG TIN NHÂN VIÊN";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            //this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // btnTTBN
             // 
