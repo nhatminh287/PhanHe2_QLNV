@@ -56,6 +56,24 @@ namespace PhanHe2_QLNV
                 string role = dr["GRANTED_ROLE"].ToString();
                 switch (role)
                 {
+                    case "R_TAICHINH":
+                        TC_Main tc = new TC_Main();
+                        Hide();
+                        tc.ShowDialog();
+                        Show();
+                        break;
+                    case "R_NHANSU":
+                        NS_Main ns = new NS_Main();
+                        Hide();
+                        ns.ShowDialog();
+                        Show();
+                        break;
+                    case "R_TRUONGDEAN":
+                        TDA_Main tda = new TDA_Main();
+                        Hide();
+                        tda.ShowDialog();
+                        Show();
+                        break;
                     case "R_NHANVIEN":
                         NV_Main nv = new NV_Main();
                         Hide();
