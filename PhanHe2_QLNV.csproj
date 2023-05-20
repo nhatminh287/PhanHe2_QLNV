@@ -83,12 +83,54 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="NhanSu_NhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NhanSu_NhanVien.Designer.cs">
+      <DependentUpon>NhanSu_NhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NS_Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NS_Main.Designer.cs">
+      <DependentUpon>NS_Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NV_TC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NV_TC.Designer.cs">
+      <DependentUpon>NV_TC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PC_TC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PC_TC.Designer.cs">
+      <DependentUpon>PC_TC.cs</DependentUpon>
+    </Compile>
     <Compile Include="PhanCong.cs" />
     <Compile Include="PhanCong_TruongPhong.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PhanCong_TruongPhong.Designer.cs">
       <DependentUpon>PhanCong_TruongPhong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QLDA_TDA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QLDA_TDA.Designer.cs">
+      <DependentUpon>QLDA_TDA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QLNV_NS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QLNV_NS.Designer.cs">
+      <DependentUpon>QLNV_NS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QLPB_NS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QLPB_NS.Designer.cs">
+      <DependentUpon>QLPB_NS.cs</DependentUpon>
     </Compile>
     <Compile Include="QLTT_Main.cs">
       <SubType>Form</SubType>
@@ -107,6 +149,24 @@
     </Compile>
     <Compile Include="QLTT_TTNV.Designer.cs">
       <DependentUpon>QLTT_TTNV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TaiChinh_NhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TaiChinh_NhanVien.Designer.cs">
+      <DependentUpon>TaiChinh_NhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TC_Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TC_Main.Designer.cs">
+      <DependentUpon>TC_Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TDA_Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TDA_Main.Designer.cs">
+      <DependentUpon>TDA_Main.cs</DependentUpon>
     </Compile>
     <Compile Include="TP_Main.cs">
       <SubType>Form</SubType>
@@ -142,14 +202,41 @@
     <Compile Include="PhongBan.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TruongDeAn_NhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TruongDeAn_NhanVien.Designer.cs">
+      <DependentUpon>TruongDeAn_NhanVien.cs</DependentUpon>
+    </Compile>
     <Compile Include="TruongPhong_NhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="TruongPhong_NhanVien.Designer.cs">
       <DependentUpon>TruongPhong_NhanVien.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="NhanSu_NhanVien.resx">
+      <DependentUpon>NhanSu_NhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NS_Main.resx">
+      <DependentUpon>NS_Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NV_TC.resx">
+      <DependentUpon>NV_TC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PC_TC.resx">
+      <DependentUpon>PC_TC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PhanCong_TruongPhong.resx">
       <DependentUpon>PhanCong_TruongPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QLDA_TDA.resx">
+      <DependentUpon>QLDA_TDA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QLNV_NS.resx">
+      <DependentUpon>QLNV_NS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QLPB_NS.resx">
+      <DependentUpon>QLPB_NS.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QLTT_Main.resx">
       <DependentUpon>QLTT_Main.cs</DependentUpon>
@@ -159,6 +246,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="QLTT_TTNV.resx">
       <DependentUpon>QLTT_TTNV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TC_Main.resx">
+      <DependentUpon>TC_Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TDA_Main.resx">
+      <DependentUpon>TDA_Main.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TP_Main.resx">
       <DependentUpon>TP_Main.cs</DependentUpon>

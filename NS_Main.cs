@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PhanHe2_QLNV
 {
-    public partial class NV_Main : Form
+    public partial class NS_Main : Form
     {
-        public NV_Main()
+        public NS_Main()
         {
             InitializeComponent();
         }
@@ -32,7 +32,7 @@ namespace PhanHe2_QLNV
             }
         }
 
-        private void btnTTNV_Click(object sender, EventArgs e)
+        private void btnTTCN_Click(object sender, EventArgs e)
         {
             NV_TTCN ttcn = new NV_TTCN();
             Hide();
@@ -42,18 +42,32 @@ namespace PhanHe2_QLNV
 
         private void btnPBDA_Click(object sender, EventArgs e)
         {
-            PC_TC pctc = new PC_TC();
+            NV_PBDA pbda = new NV_PBDA();
             Hide();
-            pctc.ShowDialog();
+            pbda.ShowDialog();
             Show();
         }
 
-        private void btnXemNhanVien_Click(object sender, EventArgs e)
+        private void btnQuanLyPhongBan_Click(object sender, EventArgs e)
         {
-            NV_TC nvtc = new NV_TC();
+            QLPB_NS qlpbns = new QLPB_NS();
             Hide();
-            nvtc.ShowDialog();
+            qlpbns.ShowDialog();
             Show();
         }
+
+        private void btnQuanLyNhanVien_Click(object sender, EventArgs e)
+        {
+            QLNV_NS qlnvns = new QLNV_NS();
+            Hide();
+            qlnvns.ShowDialog();
+            Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }
