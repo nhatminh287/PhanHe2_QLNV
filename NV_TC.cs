@@ -38,7 +38,7 @@ namespace PhanHe2_QLNV
                 DataTable data = new DataTable();
                 con.Open();
                 string userName = System.Security.Principal.WindowsIdentity.GetCurrent().Name;
-                string strSQL = "SELECT * FROM QLNV.NHANVIEN ";
+                string strSQL = "select * from QLNV.view_decrypt_TAICHINH_LUONG_PHUCAP";
 
                 OracleCommand oCmd = new OracleCommand(strSQL, con);
                 OracleDataAdapter adapter = new OracleDataAdapter(oCmd);

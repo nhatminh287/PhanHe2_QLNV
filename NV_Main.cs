@@ -42,18 +42,14 @@ namespace PhanHe2_QLNV
 
         private void btnPBDA_Click(object sender, EventArgs e)
         {
-            PC_TC pctc = new PC_TC();
+            NV_PBDA pbda = new NV_PBDA();
             Hide();
-            pctc.ShowDialog();
+            pbda.ShowDialog();
             Show();
         }
-
-        private void btnXemNhanVien_Click(object sender, EventArgs e)
+        private void NV_Main_Load(object sender, EventArgs e)
         {
-            NV_TC nvtc = new NV_TC();
-            Hide();
-            nvtc.ShowDialog();
-            Show();
+
         }
     }
 }

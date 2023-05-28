@@ -45,7 +45,6 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "QUẢN LÝ THÔNG TIN NHÂN VIÊN";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            //this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // btnTTBN
             // 
@@ -53,7 +52,7 @@
             this.btnTTBN.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnTTBN.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnTTBN.Location = new System.Drawing.Point(232, 129);
-            this.btnTTBN.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnTTBN.Margin = new System.Windows.Forms.Padding(4);
             this.btnTTBN.Name = "btnTTBN";
             this.btnTTBN.Size = new System.Drawing.Size(236, 42);
             this.btnTTBN.TabIndex = 19;
@@ -101,7 +100,8 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "NV_Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Bệnh nhân";
+            this.Text = "Nhân viên";
+            this.Load += new System.EventHandler(this.NV_Main_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

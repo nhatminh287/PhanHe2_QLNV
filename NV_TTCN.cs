@@ -35,7 +35,7 @@ namespace PhanHe2_QLNV
             dtpNgaySinh.Enabled = true;
             txtPhai.ReadOnly = true;
             txtDiaChi.ReadOnly = false;
-            txtLuong.Enabled = true;
+            txtLuong.ReadOnly = true;
             txtPhong.ReadOnly = true;
             txtSDT.ReadOnly = false;
             txtMADA.ReadOnly = true;
@@ -53,7 +53,7 @@ namespace PhanHe2_QLNV
             dtpNgaySinh.Enabled = false;
             txtPhai.ReadOnly = true;
             txtDiaChi.ReadOnly = true;
-            txtLuong.Enabled = false;
+            txtLuong.ReadOnly = true;
             txtPhong.ReadOnly = true;
             txtSDT.ReadOnly = true;
             txtMADA.ReadOnly = true;
@@ -71,7 +71,7 @@ namespace PhanHe2_QLNV
             dtpNgaySinh.Enabled = true;
             txtPhai.ReadOnly = false;
             txtDiaChi.ReadOnly = false;
-            txtLuong.Enabled = false;
+            txtLuong.ReadOnly = true;
             txtPhong.ReadOnly = false;
             txtSDT.ReadOnly = false;
             txtMADA.ReadOnly = false;
@@ -97,7 +97,7 @@ namespace PhanHe2_QLNV
                 con.Open();
                 //int tgian = int.Parse(txtTgTGDA.Text);
 
-                string strSQL = "UPDATE TUAN.NHANVIEN SET TENNV = N'" + txtTenNV.Text.ToString() +
+                string strSQL = "UPDATE QLNV.NHANVIEN SET TENNV = N'" + txtTenNV.Text.ToString() +
                     "', NGAYSINH = TO_DATE('" + dtpNgaySinh.Value.ToString("yyyy-MM-dd") + "','yyyy-mm-dd')" +
                     
                     ", SODT = '" + txtSDT.Text.ToString() +
@@ -132,7 +132,7 @@ namespace PhanHe2_QLNV
             {
                 con.Open();
                 string userName = System.Security.Principal.WindowsIdentity.GetCurrent().Name;
-                string strSQL = "SELECT * FROM QLNV.NHANVIEN nv, QLNV.PHANCONG pc WHERE nv.MANV = (SELECT user FROM dual) and nv.MANV = pc.MANV ";
+                string strSQL = "select * from QLNV.view_decrypt_NHANVIEN_LUONG_PHUCAP";
                 OracleCommand oCmd = new OracleCommand(strSQL, con);
                 var reader = oCmd.ExecuteReader();
                 //Console.WriteLine(reader);

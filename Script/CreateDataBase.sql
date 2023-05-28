@@ -77,8 +77,8 @@ CREATE TABLE NHANVIEN (
   NGAYSINH DATE,
   DIACHI VARCHAR2(200),
   SODT number(10),
-  LUONG NUMBER(15,2),
-  PHUCAP NUMBER(10,2),
+  LUONG VARCHAR2(255),
+  PHUCAP VARCHAR2(255),
   VAITRO VARCHAR2(50),
   MANQL varchar(10),
   PHG NUMBER(5),
@@ -144,6 +144,50 @@ ADD CONSTRAINT fk_PHANCONG_NHANVIEN
 FOREIGN KEY (MANV)
 REFERENCES NHANVIEN(MANV);
 /
+--Trigger ma hoa cot LUONG
+CREATE OR REPLACE TRIGGER ENCRYPT_NHANVIEN_LUONG
+BEFORE INSERT OR UPDATE ON QLNV.NHANVIEN
+FOR EACH ROW
+WHEN (new.LUONG > 0)
+DECLARE
+    input_string VARCHAR2(200);
+    encrypted_raw RAW (2000); -- stores encrypted binary text
+    v_key raw(128) := utl_i18n.string_to_raw( 'ATBMCQ-24', 'AL32UTF8' );
+    encryption_type PLS_INTEGER := SYS.DBMS_CRYPTO.ENCRYPT_DES + SYS.DBMS_CRYPTO.CHAIN_CBC + SYS.DBMS_CRYPTO.PAD_PKCS5;
+BEGIN
+    input_string := TO_CHAR(:new.LUONG);
+    encrypted_raw := DBMS_CRYPTO.ENCRYPT
+          (
+             src => UTL_I18N.STRING_TO_RAW (input_string,'AL32UTF8'),
+             typ => encryption_type,
+            key => v_key
+         );
+    input_string := RAWTOHEX(encrypted_raw);
+    :new.LUONG := TO_NCHAR(input_string);
+END;
+/
+--Trigger ma hoa cot PHUCAP
+CREATE OR REPLACE TRIGGER ENCRYPT_NHANVIEN_PHUCAP
+BEFORE INSERT OR UPDATE ON QLNV.NHANVIEN
+FOR EACH ROW
+WHEN (new.PHUCAP > 0)
+DECLARE
+    input_string VARCHAR2(200);
+    encrypted_raw RAW (2000); -- stores encrypted binary text
+    v_key raw(128) := utl_i18n.string_to_raw( 'ATBMCQ-24', 'AL32UTF8' );
+    encryption_type PLS_INTEGER := SYS.DBMS_CRYPTO.ENCRYPT_DES + SYS.DBMS_CRYPTO.CHAIN_CBC + SYS.DBMS_CRYPTO.PAD_PKCS5;
+BEGIN
+    input_string := TO_CHAR(:new.PHUCAP);
+    encrypted_raw := DBMS_CRYPTO.ENCRYPT
+          (
+             src => UTL_I18N.STRING_TO_RAW (input_string,'AL32UTF8'),
+             typ => encryption_type,
+            key => v_key
+         );
+    input_string := RAWTOHEX(encrypted_raw);
+    :new.PHUCAP := TO_NCHAR(input_string);
+END;
+/
 ----------------
 --Insert d? li?u m?u
 INSERT ALL
@@ -158,27 +202,27 @@ SELECT * FROM dual;
 ----
 INSERT ALL
 INTO NHANVIEN (MANV, TENNV, PHAI, NGAYSINH, DIACHI, SODT, LUONG, PHUCAP, VAITRO, MANQL, PHG)
-VALUES ('TP01', 'Nguyen Van A', 'Nam', TO_DATE('01-01-1990', 'DD-MM-YYYY'), 'So 1, Nguyen Hue, Ha Noi', 1111111111, 10000.00, 3000.00, 'Tr??ng ph�ng', null, 1)
+VALUES ('TP01', 'Nguyen Van A', 'Nam', TO_DATE('01-01-1990', 'DD-MM-YYYY'), 'So 1, Nguyen Hue, Ha Noi', 1111111111, '10000', '3000', 'Tr??ng ph�ng', null, 1)
 INTO NHANVIEN (MANV, TENNV, PHAI, NGAYSINH, DIACHI, SODT, LUONG, PHUCAP, VAITRO, MANQL, PHG)
-VALUES ('TP02', 'Tran Thi B', 'Nu', TO_DATE('02-02-1995', 'DD-MM-YYYY'), 'So 2, Le Loi, Ho Chi Minh', 2222222222, 9000.00, 2500.00, 'Tr??ng ph�ng', null, 2)
+VALUES ('TP02', 'Tran Thi B', 'Nu', TO_DATE('02-02-1995', 'DD-MM-YYYY'), 'So 2, Le Loi, Ho Chi Minh', 2222222222, '9000', '2500', 'Tr??ng ph�ng', null, 2)
 INTO NHANVIEN (MANV, TENNV, PHAI, NGAYSINH, DIACHI, SODT, LUONG, PHUCAP, VAITRO, MANQL, PHG)
-VALUES ('GD02', 'Le Van C', 'Nam', TO_DATE('03-03-1988', 'DD-MM-YYYY'), 'So 3, Nguyen Trai, Da Nang', 3333333333, 11000.00, 4000.00, 'Gi�m ??c', null, 2)
+VALUES ('GD02', 'Le Van C', 'Nam', TO_DATE('03-03-1988', 'DD-MM-YYYY'), 'So 3, Nguyen Trai, Da Nang', 3333333333, '11000', '4000', 'Gi�m ??c', null, 2)
 INTO NHANVIEN (MANV, TENNV, PHAI, NGAYSINH, DIACHI, SODT, LUONG, PHUCAP, VAITRO, MANQL, PHG)
-VALUES ('QL01', 'Ho Thi D', 'Nu', TO_DATE('04-04-1993', 'DD-MM-YYYY'), 'So 4, Tran Hung Dao, Ha Noi', 4444444444, 12000.00, 4500.00, 'QL tr?c ti?p', null, 3)
+VALUES ('QL01', 'Ho Thi D', 'Nu', TO_DATE('04-04-1993', 'DD-MM-YYYY'), 'So 4, Tran Hung Dao, Ha Noi', 4444444444, '12000', '4500', 'QL tr?c ti?p', null, 3)
 INTO NHANVIEN (MANV, TENNV, PHAI, NGAYSINH, DIACHI, SODT, LUONG, PHUCAP, VAITRO, MANQL, PHG)
-VALUES ('NS01', 'Nguyen Van E', 'Nam', TO_DATE('05-05-1998', 'DD-MM-YYYY'), 'So 5, Le Duan, Ho Chi Minh', 5555555555, 13000.00, 5000.00, 'Nh�n s?', null, 3)
+VALUES ('NS01', 'Nguyen Van E', 'Nam', TO_DATE('05-05-1998', 'DD-MM-YYYY'), 'So 5, Le Duan, Ho Chi Minh', 5555555555, '13000', '5000', 'Nh�n s?', null, 3)
 INTO NHANVIEN (MANV, TENNV, PHAI, NGAYSINH, DIACHI, SODT, LUONG, PHUCAP, VAITRO, MANQL, PHG)
-VALUES ('TC01', 'Tran Thi F', 'Nu', TO_DATE('06-06-1985', 'DD-MM-YYYY'), 'So 6, Nguyen Van Linh, Da Nang', 6666666666, 14000.00, 5500.00, 'T�i ch�nh', null, 1)
+VALUES ('TC01', 'Tran Thi F', 'Nu', TO_DATE('06-06-1985', 'DD-MM-YYYY'), 'So 6, Nguyen Van Linh, Da Nang', 6666666666, '14000', '5500', 'T�i ch�nh', null, 1)
 INTO NHANVIEN (MANV, TENNV, PHAI, NGAYSINH, DIACHI, SODT, LUONG, PHUCAP, VAITRO, MANQL, PHG)
-VALUES ('TDA01', 'Le Van G', 'Nam', TO_DATE('07-07-1991', 'DD-MM-YYYY'), 'So 7, Tran Quoc Toan, Ha Noi', 7777777777, 15000.00, 6000.00, 'Tr??ng ?? �n', null,1 )
+VALUES ('TDA01', 'Le Van G', 'Nam', TO_DATE('07-07-1991', 'DD-MM-YYYY'), 'So 7, Tran Quoc Toan, Ha Noi', 7777777777, '15000', '6000', 'Tr??ng ?? �n', null,1 )
 INTO NHANVIEN (MANV, TENNV, PHAI, NGAYSINH, DIACHI, SODT, LUONG, PHUCAP, VAITRO, MANQL, PHG)
-VALUES ('NV01', 'Ho Thi H', 'Nu', TO_DATE('08-08-1996', 'DD-MM-YYYY'), 'So 8, Nguyen Van Cu, Ho Chi Minh', 8888888888, 16000.00, 6500.00, 'Nh�n vi�n','QL01', 3)
+VALUES ('NV01', 'Ho Thi H', 'Nu', TO_DATE('08-08-1996', 'DD-MM-YYYY'), 'So 8, Nguyen Van Cu, Ho Chi Minh', 8888888888, '16000', '6500', 'Nh�n vi�n','QL01', 3)
 INTO NHANVIEN (MANV, TENNV, PHAI, NGAYSINH, DIACHI, SODT, LUONG, PHUCAP, VAITRO, MANQL, PHG)
-VALUES ('NV02', 'Nguyen Van I', 'Nam', TO_DATE('09-09-1992', 'DD-MM-YYYY'), 'So 9, Tran Duy Hung, Ha Tinh', 9999999999, 17000.00, 7000.00, 'Nh�n vi�n', 'QL01', 3)
+VALUES ('NV02', 'Nguyen Van I', 'Nam', TO_DATE('09-09-1992', 'DD-MM-YYYY'), 'So 9, Tran Duy Hung, Ha Tinh', 9999999999, '17000', '7000', 'Nh�n vi�n', 'QL01', 3)
 INTO NHANVIEN (MANV, TENNV, PHAI, NGAYSINH, DIACHI, SODT, LUONG, PHUCAP, VAITRO, MANQL, PHG)
-VALUES ('NV03', 'Nguyen Van K', 'Nam', TO_DATE('09-07-1997', 'DD-MM-YYYY'), 'So 9, Tran Duy Hung, Da Nang', 1010101010, 18000.00, 8000.00, 'Nh�n vi�n',null, 2)
+VALUES ('NV03', 'Nguyen Van K', 'Nam', TO_DATE('09-07-1997', 'DD-MM-YYYY'), 'So 9, Tran Duy Hung, Da Nang', 1010101010, '18000', '8000', 'Nh�n vi�n',null, 2)
 INTO NHANVIEN (MANV, TENNV, PHAI, NGAYSINH, DIACHI, SODT, LUONG, PHUCAP, VAITRO, MANQL, PHG)
-VALUES ('NV04', 'Nguyen Van L', 'Nam', TO_DATE('09-07-199', 'DD-MM-YYYY'), 'So 9, Tran Duy Hung, Da Nang', 1010101011, 19000.00, 8000.00, 'Nh�n vi�n',null,1 )
+VALUES ('NV04', 'Nguyen Van L', 'Nam', TO_DATE('09-07-199', 'DD-MM-YYYY'), 'So 9, Tran Duy Hung, Da Nang', 1010101011, '19000', '8000', 'Nh�n vi�n',null,1 )
 SELECT * FROM dual;
 /
 
@@ -221,6 +265,8 @@ SELECT *  FROM PHANCONG;
 SELECT * FROM PHONGBAN;
 /
 
-UPDATE QLNV.PHONGBAN SET TRPHG = 'TP01' WHERE MAPB = 'PB01';
-UPDATE QLNV.PHONGBAN SET TRPHG = 'TP01' WHERE MAPB = 'PB02';
+UPDATE QLNV.PHONGBAN SET TRPHG = 'TP01' WHERE MAPB = 1;
+UPDATE QLNV.PHONGBAN SET TRPHG = 'TP02' WHERE MAPB = 2;
 INSERT INTO QLNV.PHANCONG VALUES('TP01', 1, 25);
+
+
